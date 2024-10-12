@@ -321,7 +321,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	            ledState[0] = 0;
 
 	        } else {
-	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
+	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 	            ledState[0] = 1;
 
 	        }
@@ -330,7 +330,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
 	            ledState[1] = 0;
 
-	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+	        } else { HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
 	            ledState[1] = 1;
 
 	        }
@@ -340,7 +340,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	            ledState[2] = 0;
 
 	        } else {
-	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
 	            ledState[2] = 1;
 
 	        }
@@ -349,7 +349,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 	            ledState[3] = 0;
 
-	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+	        } else { HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 	            ledState[3] = 1;
 
 	        }
@@ -363,7 +363,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 	        } else {
 	            for (int j = 0; j < 4; j++) {
-	                HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15 >> j, GPIO_PIN_SET);
+	                HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15 >> j, GPIO_PIN_RESET);
 	                ledState[j] = 1;
 	            }
 	            allLedsOn = 1;
